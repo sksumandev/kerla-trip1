@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b7a4b">
+<title>Kerala Trip 2026 — Munnar & Wayanad Wonders | 9 Days from Hyderabad</title>
+<style>
+  :root{
+    --green:#0b7a4b; --green-d:#075c39; --green-l:#13a866;
+    --teal:#0e7490; --amber:#f59e0b; --amber-d:#b45309;
+    --ink:#13241c; --muted:#5b6b62; --bg:#f3f8f4; --card:#ffffff;
+    --line:#e3ede6; --shadow:0 8px 24px rgba(11,122,75,.10);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.6;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:var(--green);text-decoration:none}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:6px;padding:10px 14px;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .nav::-webkit-scrollbar{display:none}
+  .nav b{color:var(--green);font-size:15px;white-space:nowrap;margin-right:4px}
+  .nav a{
+    font-size:13px;font-weight:600;color:var(--muted);
+    padding:6px 12px;border-radius:999px;white-space:nowrap;
+    background:#eef5f0;transition:.2s;
+  }
+  .nav a:hover{background:var(--green);color:#fff}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:78vh;display:flex;align-items:flex-end;
+    color:#fff;
+    background:
+      linear-gradient(180deg,rgba(7,92,57,.25) 0%,rgba(7,46,30,.85) 100%),
+      url('https://loremflickr.com/1200/900/munnar,tea,plantation,kerala/all') center/cover no-repeat,
+      linear-gradient(160deg,#0b7a4b,#075c39);
+  }
+  .hero-inner{padding:34px 22px 40px;max-width:900px}
+  .badge{
+    display:inline-block;background:var(--amber);color:#3a2400;font-weight:800;
+    font-size:12px;letter-spacing:.5px;padding:6px 14px;border-radius:999px;text-transform:uppercase;
+  }
+  .hero h1{font-size:clamp(30px,8vw,58px);line-height:1.05;margin:14px 0 8px;text-shadow:0 3px 18px rgba(0,0,0,.4)}
+  .hero h1 span{color:#ffe08a}
+  .hero p{font-size:clamp(15px,4vw,19px);opacity:.95;max-width:620px}
+  .hero-stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .hstat{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(6px);padding:10px 16px;border-radius:14px}
+  .hstat b{display:block;font-size:20px}
+  .hstat small{font-size:11px;opacity:.85;text-transform:uppercase;letter-spacing:.5px}
+
+  /* ---------- LAYOUT ---------- */
+  section{padding:46px 18px;max-width:1040px;margin:0 auto}
+  .sec-tag{color:var(--amber-d);font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+  h2{font-size:clamp(24px,6vw,36px);margin:6px 0 8px;color:var(--green-d);line-height:1.15}
+  .lead{color:var(--muted);max-width:680px;margin-bottom:24px;font-size:15.5px}
+
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden}
+  .card .pad{padding:18px}
+  .card h3{font-size:18px;color:var(--green-d);margin-bottom:4px}
+  .card p{font-size:14px;color:var(--muted)}
+  .ph{height:170px;background:#dfeee6 center/cover no-repeat;position:relative}
+  .ph .tag{position:absolute;left:10px;top:10px;background:rgba(7,92,57,.9);color:#fff;
+    font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px}
+  .price-chip{display:inline-block;background:#eaf7f0;color:var(--green-d);font-weight:800;
+    font-size:13px;padding:4px 12px;border-radius:999px;border:1px solid #cde9da;margin-top:8px}
+
+  /* feature cards */
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;box-shadow:var(--shadow);text-align:center}
+  .feat .ico{font-size:34px}
+  .feat b{display:block;margin-top:6px;color:var(--green-d);font-size:16px}
+  .feat small{color:var(--muted);font-size:13px}
+
+  /* ---------- ROUTE ---------- */
+  .route{background:linear-gradient(135deg,#075c39,#0b7a4b);color:#fff;border-radius:var(--radius);
+    padding:26px 20px;box-shadow:var(--shadow)}
+  .route-line{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:center;font-weight:700}
+  .route-line .stop{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);
+    padding:8px 14px;border-radius:12px;font-size:14px}
+  .route-line .arr{color:#ffe08a;font-size:20px}
+
+  /* ---------- TIMELINE ---------- */
+  .day{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden;margin-bottom:18px}
+  .day-head{display:flex;align-items:center;gap:14px;padding:16px 18px;
+    background:linear-gradient(135deg,#0b7a4b,#13a866);color:#fff}
+  .day-num{background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.5);
+    width:54px;height:54px;flex:0 0 54px;border-radius:14px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;font-weight:800;line-height:1}
+  .day-num small{font-size:9px;font-weight:600;opacity:.9}
+  .day-num b{font-size:22px}
+  .day-head h3{font-size:17px;margin:0}
+  .day-head .date{font-size:12.5px;opacity:.9}
+  .day-body{padding:16px 18px}
+  .day-img{height:200px;background:#dfeee6 center/cover no-repeat}
+  .step{display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+  .step:last-child{border-bottom:0}
+  .step .t{flex:0 0 64px;color:var(--amber-d);font-weight:700;font-size:13px}
+  .step .d{flex:1}
+  .day-cost{margin-top:12px;background:#eaf7f0;border:1px solid #cde9da;border-radius:12px;
+    padding:10px 14px;font-size:13.5px;color:var(--green-d);font-weight:700}
+
+  /* ---------- TABLE ---------- */
+  .tbl-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;min-width:460px;background:#fff;font-size:14px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:var(--green-d);color:#fff;font-size:12.5px;text-transform:uppercase;letter-spacing:.4px;position:sticky;top:0}
+  tr:nth-child(even) td{background:#f6fbf8}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tfoot td{font-weight:800;background:#eaf7f0!important;color:var(--green-d);font-size:15px}
+  .perp{color:var(--teal);font-weight:700}
+
+  /* ---------- VIDEOS ---------- */
+  .vid{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;box-shadow:var(--shadow)}
+  .vid .frame{position:relative;padding-top:56.25%;background:#000}
+  .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .vid .pad{padding:12px 14px}
+  .vid b{font-size:14px;color:var(--green-d);display:block}
+  .vid small{color:var(--muted);font-size:12px}
+
+  /* tips / notes */
+  .note{border-left:5px solid var(--amber);background:#fff8e9;border-radius:12px;
+    padding:14px 16px;font-size:14px;color:#5a4205;margin:12px 0}
+  .note.warn{border-color:#e0533a;background:#fdeee9;color:#7a2c18}
+  .tip-list{list-style:none}
+  .tip-list li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;
+    margin-bottom:8px;font-size:14px;display:flex;gap:10px}
+  .tip-list li span{font-size:20px;flex:0 0 24px}
+
+  footer{background:var(--green-d);color:#dff3e8;text-align:center;padding:34px 18px;font-size:13.5px}
+  footer b{color:#fff;font-size:16px}
+  .pill{display:inline-block;background:rgba(255,255,255,.12);padding:6px 14px;border-radius:999px;margin:4px}
+
+  .total-banner{background:linear-gradient(135deg,#f59e0b,#b45309);color:#fff;border-radius:var(--radius);
+    padding:24px;text-align:center;box-shadow:var(--shadow);margin-top:18px}
+  .total-banner b{font-size:34px;display:block}
+  .total-banner small{opacity:.92}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <b>🌴 Kerala '26</b>
+  <a href="#overview">Overview</a>
+  <a href="#route">Route</a>
+  <a href="#itinerary">Day-by-Day</a>
+  <a href="#munnar">Munnar</a>
+  <a href="#wayanad">Wayanad</a>
+  <a href="#stay">Stay</a>
+  <a href="#bike">Bikes</a>
+  <a href="#food">Food</a>
+  <a href="#budget">Budget</a>
+  <a href="#videos">Videos</a>
+  <a href="#tips">Tips</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="badge">Hyderabad → Kerala • Budget Trip</span>
+    <h1>Munnar &amp; <span>Wayanad</span> Wonders</h1>
+    <p>A complete, low-budget 9-day monsoon escape through Kerala's misty tea hills, roaring waterfalls and ancient caves — for 4 friends, on two wheels.</p>
+    <div class="hero-stats">
+      <div class="hstat"><b>9</b><small>Days</small></div>
+      <div class="hstat"><b>4</b><small>Travellers</small></div>
+      <div class="hstat"><b>03 Jul</b><small>Start 2026</small></div>
+      <div class="hstat"><b>≈₹62k</b><small>Total (4 pax)</small></div>
+      <div class="hstat"><b>~₹15.5k</b><small>Per person</small></div>
+    </div>
+  </div>
+</header>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <span class="sec-tag">The Plan at a Glance</span>
+  <h2>Two Hill Stations, One Epic Trip</h2>
+  <p class="lead">Munnar (south Kerala, near Kochi) and Wayanad (north Kerala, near Kozhikode) are ~205&nbsp;km apart. We enter from Kochi by train, explore Munnar's tea country, ride north to Wayanad, then loop back home from Kozhikode — the cheapest, most scenic circuit.</p>
+
+  <div class="grid g4">
+    <div class="feat"><div class="ico">🚆</div><b>Train In &amp; Out</b><small>Sabari Exp to Kochi, return from Kozhikode — sleeper class</small></div>
+    <div class="feat"><div class="ico">🛵</div><b>Rented Bikes</b><small>Scooters &amp; bikes in both hills for freedom + savings</small></div>
+    <div class="feat"><div class="ico">🏡</div><b>Homestays</b><small>Clean budget homestays, ~₹1,300/night for 4</small></div>
+    <div class="feat"><div class="ico">🌧️</div><b>Monsoon Magic</b><small>July = lush green, full waterfalls, off-season rates</small></div>
+  </div>
+
+  <div class="note warn" style="margin-top:18px">
+    ⚠️ <b>July is peak monsoon in Kerala.</b> Expect heavy rain, slippery roads &amp; occasional landslide closures in Munnar/Wayanad ghats. Carry rain gear, ride slowly, check weather &amp; road status daily, and keep the itinerary flexible. Rates are lowest now — that's the budget win.
+  </div>
+</section>
+
+<!-- ROUTE -->
+<section id="route">
+  <span class="sec-tag">The Circuit</span>
+  <h2>Your Route Map</h2>
+  <p class="lead">A clean one-way loop so you never backtrack — saving both time and money.</p>
+  <div class="route">
+    <div class="route-line">
+      <span class="stop">🏙️ Hyderabad</span><span class="arr">→</span>
+      <span class="stop">🚆 Ernakulam (Kochi)</span><span class="arr">→</span>
+      <span class="stop">⛰️ Munnar</span><span class="arr">→</span>
+      <span class="stop">🌿 Wayanad</span><span class="arr">→</span>
+      <span class="stop">🌊 Kozhikode</span><span class="arr">→</span>
+      <span class="stop">🏙️ Hyderabad</span>
+    </div>
+    <div style="text-align:center;margin-top:16px;font-size:13.5px;opacity:.9">
+      🚆 Train 1: HYD → Ernakulam · 🚌 Bus → Munnar · 🚌 Bus Munnar → Wayanad · 🚌 Bus → Kozhikode · 🚆 Train 2: Kozhikode → HYD
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section id="itinerary">
+  <span class="sec-tag">Step-by-Step</span>
+  <h2>Day-by-Day Itinerary</h2>
+  <p class="lead">9 trip days (plus a bonus arrival morning). Times are indicative — adjust for rain and tiredness.</p>
+
+  <!-- DAY 1 -->
+  <div class="day">
+    <div class="day-head">
+      <div class="day-num"><small>DAY</small><b>1</b></div>
+      <div><h3>Board the Sabari Express</h3><div class="date">Fri, 3 July 2026 · On train 🚆</div></div>
+    </div>
+    <div class="day-body">
+      <div class="step"><div class="t">14:25</div><div class="d">Board <b>Sabari SF Express (20629)</b> from Secunderabad / Hyderabad. Book sleeper (SL) seats 60 days early on IRCTC.</div></div>
+      <div class="step"><div class="t">Eve</div><div class="d">Pantry meals or pack home food. Card games, music, sleep early. ~22 hr ride.</div></div>
+      <div class="day-cost">💸 Train (4× SL ≈ ₹700) = <b>₹2,800</b> · Snacks ~₹600</div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day">
+    <div class="day-img" style="background-image:url('https://loremflickr.com/900/400/munnar,hills,road/all')"></div>
+    <div class="day-head">
+      <div class="day-num"><small>DAY</small><b>2</b></div>
+      <div><h3>Kochi → Munnar (Tea Country)</h3><div class="date">Sat, 4 July 2026 · Night 1 in Munnar</div></div>
+    </div>
+    <div class="day-body">
+      <div class="step"><div class="t">~13:00</div><div class="d">Arrive Ernakulam Jn. Quick lunch (Kerala meals / appam).</div></div>
+      <div class="step"><div class="t">14:00</div><div class="d">Board <b>KSRTC bus to Munnar</b> (~4–5 hr, ₹130–160/person) via Adimali ghats — gorgeous.</div></div>
+      <div class="step"><div class="t">19:00</div><div class="d">Reach Munnar, check into homestay. Hot tea + early dinner. Rest.</div></div>
+      <div class="day-cost">💸 Bus 4× ≈ <b>₹600</b> · Stay <b>₹1,300</b> · Food ~₹900</div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day">
+    <div class="day-img" style="background-image:url('https://loremflickr.com/900/400/tea,garden,munnar/all')"></div>
+    <div class="day-head">
+      <div class="day-num"><small>DAY</small><b>3</b></div>
+      <div><h3>Munnar — Tea Trails &amp; Viewpoints</h3><div class="date">Sun, 5 July 2026 · Night 2 in Munnar</div></div>
+    </div>
+    <div class="day-body">
+      <div class="step"><div class="t">Morning</div><div class="d"><b>Rent 2 bikes</b> (₹500/day each). Ride to <b>Photo Point</b> &amp; <b>Pothamedu Viewpoint</b> for rolling tea-carpet views.</div></div>
+      <div class="step"><div class="t">Noon</div><div class="d"><b>Tata Tea Museum</b> (₹150 pp) — tea-processing demo &amp; tasting.</div></div>
+      <div class="step"><div class="t">Eve</div><div class="d">Munnar town market — buy spices, homemade chocolate, tea. Sunset at a tea-estate lane.</div></div>
+      <div class="day-cost">💸 Bikes ₹1,000 + fuel ₹400 · Tea Museum ₹600 · Food ~₹1,200</div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day">
+    <div class="day-img" style="background-image:url('https://loremflickr.com/900/400/dam,lake,mountains,kerala/all')"></div>
+    <div class="day-head">
+      <div class="day-num"><small>DAY</small><b>4</b></div>
+      <div><h3>Munnar — Dams, Lakes &amp; Nilgiri Tahr</h3><div class="date">Mon, 6 July 2026 · Night 3 in Munnar</div></div>
+    </div>
+    <div class="day-body">
+      <div class="step"><div class="t">07:00</div><div class="d"><b>Eravikulam National Park (Rajamala)</b> — spot the rare Nilgiri Tahr. Govt bus from gate. (~₹200 pp; book early, weather permitting.)</div></div>
+      <div class="step"><div class="t">Noon</div><div class="d"><b>Mattupetty Dam</b> (boating ~₹400/grp) → <b>Echo Point</b> → <b>Kundala Lake</b> (shikara/pedal boat).</div></div>
+      <div class="step"><div class="t">Eve</div><div class="d"><b>Blossom Park</b> riverside walk. Ride back through misty curves.</div></div>
+      <div class="day-cost">💸 Eravikulam ~₹1,000 · Boating ~₹800 · Bikes+fuel ₹1,400 · Food ~₹1,200</div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day">
+    <div class="day-img" style="background-image:url('https://loremflickr.com/900/400/waterfall,kerala,green/all')"></div>
+    <div class="day-head">
+      <div class="day-num"><small>DAY</small><b>5</b></div>
+      <div><h3>Munnar — Sunrise Tea Estate &amp; Waterfalls</h3><div class="date">Tue, 7 July 2026 · Night 4 in Munnar</div></div>
+    </div>
+    <div class="day-body">
+      <div class="step"><div class="t">04:30</div><div class="d"><b>Kolukkumalai sunrise jeep</b> (~₹2,500 shared 4WD) — world's highest tea estate, cloud-sea views. (Monsoon: only if road open.)</div></div>
+      <div class="step"><div class="t">Noon</div><div class="d"><b>Top Station</b> viewpoint (Kerala–TN border) → <b>Attukad Waterfalls</b> &amp; <b>Lakkam Falls</b> — thundering in July.</div></div>
+      <div class="step"><div class="t">Eve</div><div class="d">Pack up. Chill evening, local toddy-shop fish curry optional. Return bikes.</div></div>
+      <div class="day-cost">💸 Kolukkumalai jeep ₹2,500 · Falls entry ~₹400 · Food ~₹1,200</div>
+    </div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day">
+    <div class="day-img" style="background-image:url('https://loremflickr.com/900/400/kerala,winding,road,forest/all')"></div>
+    <div class="day-head">
+      <div class="day-num"><small>DAY</small><b>6</b></div>
+      <div><h3>The Big Ride: Munnar → Wayanad</h3><div class="date">Wed, 8 July 2026 · Night 1 in Wayanad</div></div>
+    </div>
+    <div class="day-body">
+      <div class="note">Long travel day (~205&nbsp;km, 8–9&nbsp;hr by bus). Cheapest = KSRTC bus(es) via Kochi/Muvattupuzha → Kalpetta (≈₹500–550 pp). Start early. (A shared cab cuts it to ~5–6 hr but costs ~₹6,000–7,000 for the group.)</div>
+      <div class="step"><div class="t">06:30</div><div class="d">Early bus from Munnar. Breakfast en route.</div></div>
+      <div class="step"><div class="t">~16:00</div><div class="d">Reach <b>Kalpetta, Wayanad</b>. Check into homestay, freshen up.</div></div>
+      <div class="step"><div class="t">Eve</div><div class="d">Relax, plan next 2 days, dinner at local eatery.</div></div>
+      <div class="day-cost">💸 Bus 4× ≈ <b>₹2,200</b> · Stay <b>₹1,300</b> · Food ~₹1,000</div>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="day">
+    <div class="day-img" style="background-image:url('https://loremflickr.com/900/400/cave,rock,ancient,india/all')"></div>
+    <div class="day-head">
+      <div class="day-num"><small>DAY</small><b>7</b></div>
+      <div><h3>Wayanad — Caves &amp; Waterfalls</h3><div class="date">Thu, 9 July 2026 · Night 2 in Wayanad</div></div>
+    </div>
+    <div class="day-body">
+      <div class="step"><div class="t">Morning</div><div class="d"><b>Rent 2 scooters</b> (₹400/day each). Ride to <b>Edakkal Caves</b> (₹50 pp, 8AM–4PM, <b>closed Mon</b>) — 6,000-yr-old petroglyphs after a fun trek.</div></div>
+      <div class="step"><div class="t">Noon</div><div class="d"><b>Phantom Rock (Cheengeri)</b> skull-shaped formation + nearby viewpoints.</div></div>
+      <div class="step"><div class="t">Aft</div><div class="d"><b>Soochipara (Sentinel Rock) Waterfalls</b> — full-force in monsoon (entry ~₹90 pp).</div></div>
+      <div class="day-cost">💸 Scooters ₹800 + fuel ₹400 · Entries ~₹700 · Food ~₹1,200</div>
+    </div>
+  </div>
+
+  <!-- DAY 8 -->
+  <div class="day">
+    <div class="day-img" style="background-image:url('https://loremflickr.com/900/400/heart,lake,mountain,trek/all')"></div>
+    <div class="day-head">
+      <div class="day-num"><small>DAY</small><b>8</b></div>
+      <div><h3>Wayanad — Dam, Heart Lake &amp; Wildlife</h3><div class="date">Fri, 10 July 2026 · Night 3 in Wayanad</div></div>
+    </div>
+    <div class="day-body">
+      <div class="step"><div class="t">Early</div><div class="d"><b>Chembra Peak trek</b> to the famous <b>heart-shaped lake</b> (permit + guide ~₹750/grp, ₹20 pp). Highest peak in Wayanad. (Trek may shut in heavy rain.)</div></div>
+      <div class="step"><div class="t">Noon</div><div class="d"><b>Banasura Sagar Dam</b> (₹40 pp) — India's largest earth dam, with boating (~₹600/grp).</div></div>
+      <div class="step"><div class="t">Aft</div><div class="d"><b>Pookode Lake</b> (₹40 pp) boating · optional <b>Muthanga/Tholpetty safari</b> jeep (~₹2,500) for elephants &amp; bison.</div></div>
+      <div class="day-cost">💸 Chembra ~₹830 · Banasura+boat ~₹800 · Pookode ~₹400 · Safari ~₹2,500 · Food ~₹1,200</div>
+    </div>
+  </div>
+
+  <!-- DAY 9 -->
+  <div class="day">
+    <div class="day-img" style="background-image:url('https://loremflickr.com/900/400/kerala,beach,sunset,kozhikode/all')"></div>
+    <div class="day-head">
+      <div class="day-num"><small>DAY</small><b>9</b></div>
+      <div><h3>Wayanad → Kozhikode → Home</h3><div class="date">Sat, 11 July 2026 · On train 🚆</div></div>
+    </div>
+    <div class="day-body">
+      <div class="step"><div class="t">Morning</div><div class="d">Last-minute shopping — Wayanad coffee, spices, bamboo crafts, chocolate. Check out.</div></div>
+      <div class="step"><div class="t">13:00</div><div class="d"><b>Bus to Kozhikode</b> (~2.5 hr, ₹90–110 pp) via scenic Thamarassery ghat (9 hairpin bends!).</div></div>
+      <div class="step"><div class="t">Eve</div><div class="d">Kozhikode beach + famous <b>Calicut halwa</b> &amp; biryani. Then board night train.</div></div>
+      <div class="step"><div class="t">23:30</div><div class="d"><b>Train to Hyderabad (12790 / 17603 etc.)</b> — sleeper ≈ ₹600 pp.</div></div>
+      <div class="day-cost">💸 Bus 4× ≈ ₹400 · Train 4× SL ≈ <b>₹2,400</b> · Food ~₹1,200</div>
+    </div>
+  </div>
+
+  <!-- BONUS -->
+  <div class="day">
+    <div class="day-head" style="background:linear-gradient(135deg,#0e7490,#13a866)">
+      <div class="day-num"><small>+1</small><b>🏠</b></div>
+      <div><h3>Arrive Hyderabad</h3><div class="date">Sun, 12 July 2026 · Bonus morning</div></div>
+    </div>
+    <div class="day-body">
+      <div class="step"><div class="t">~23:40</div><div class="d">Reach Hyderabad (Kacheguda/Secunderabad). Trip complete — full memory cards, empty wallets, happy hearts! 🌿</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MUNNAR WONDERS -->
+<section id="munnar">
+  <span class="sec-tag">Dream Places · Part 1</span>
+  <h2>Munnar Wonders ⛰️</h2>
+  <p class="lead">Rolling tea carpets, misty peaks and silver waterfalls — the "Kashmir of South India."</p>
+  <div class="grid g3">
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/tea,plantation/all')"><span class="tag">Free</span></div>
+      <div class="pad"><h3>Tea Gardens &amp; Photo Point</h3><p>Endless emerald tea slopes. Best at sunrise. Ride through estate roads.</p><span class="price-chip">Entry: Free</span></div>
+    </div>
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/wildlife,deer,mountain/all')"><span class="tag">Must</span></div>
+      <div class="pad"><h3>Eravikulam NP</h3><p>Home of the rare Nilgiri Tahr &amp; Neelakurinji. Govt bus ride to Rajamala.</p><span class="price-chip">≈ ₹200 / person</span></div>
+    </div>
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/dam,reservoir,boat/all')"><span class="tag">Boating</span></div>
+      <div class="pad"><h3>Mattupetty Dam</h3><p>Pretty reservoir with speed/pedal boats &amp; the Echo Point nearby.</p><span class="price-chip">Boat ~₹400/grp</span></div>
+    </div>
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/sunrise,clouds,tea/all')"><span class="tag">Sunrise</span></div>
+      <div class="pad"><h3>Kolukkumalai</h3><p>World's highest tea estate. Jeep sunrise above a sea of clouds.</p><span class="price-chip">Jeep ~₹2,500/grp</span></div>
+    </div>
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/waterfall,forest/all')"><span class="tag">Monsoon</span></div>
+      <div class="pad"><h3>Attukad &amp; Lakkam Falls</h3><p>Thundering cascades, fullest &amp; most dramatic during July rains.</p><span class="price-chip">Entry ~₹40–60</span></div>
+    </div>
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/lake,boat,hills/all')"><span class="tag">Scenic</span></div>
+      <div class="pad"><h3>Kundala Lake &amp; Top Station</h3><p>Shikara boating + the highest viewpoint on the Kerala–Tamil Nadu border.</p><span class="price-chip">Boat ~₹400</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WAYANAD WONDERS -->
+<section id="wayanad">
+  <span class="sec-tag">Dream Places · Part 2</span>
+  <h2>Wayanad Wonders 🌿</h2>
+  <p class="lead">Ancient caves, a heart-shaped lake, a giant earth dam and jungle safaris.</p>
+  <div class="grid g3">
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/cave,petroglyph,rock/all')"><span class="tag">6000 yrs</span></div>
+      <div class="pad"><h3>Edakkal Caves</h3><p>Prehistoric rock carvings after a 45-min trek. Closed Mondays, 8AM–4PM.</p><span class="price-chip">₹50 / person</span></div>
+    </div>
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/heart,lake,green,trek/all')"><span class="tag">Iconic</span></div>
+      <div class="pad"><h3>Chembra Peak</h3><p>Wayanad's highest peak &amp; the famous heart-shaped lake trek.</p><span class="price-chip">₹20 pp + ~₹750 guide</span></div>
+    </div>
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/dam,earth,reservoir/all')"><span class="tag">India's largest</span></div>
+      <div class="pad"><h3>Banasura Sagar Dam</h3><p>Largest earth dam in India. Boating + island hills backdrop.</p><span class="price-chip">₹40 + boat ~₹600</span></div>
+    </div>
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/waterfall,rock,jungle/all')"><span class="tag">Monsoon</span></div>
+      <div class="pad"><h3>Soochipara &amp; Meenmutty Falls</h3><p>Multi-tier waterfalls roaring in the rains. Great for photos.</p><span class="price-chip">~₹90 / person</span></div>
+    </div>
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/lake,forest,boat/all')"><span class="tag">Calm</span></div>
+      <div class="pad"><h3>Pookode Lake</h3><p>Freshwater lake ringed by evergreen forest. Pedal boating.</p><span class="price-chip">₹40 / person</span></div>
+    </div>
+    <div class="card">
+      <div class="ph" style="background-image:url('https://loremflickr.com/600/400/elephant,safari,jungle/all')"><span class="tag">Wildlife</span></div>
+      <div class="pad"><h3>Muthanga / Tholpetty Safari</h3><p>Jeep safari for elephants, bison, deer &amp; maybe a tiger.</p><span class="price-chip">Jeep ~₹2,500/grp</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STAY -->
+<section id="stay">
+  <span class="sec-tag">Where to Stay</span>
+  <h2>Budget Homestays 🏡</h2>
+  <p class="lead">Monsoon = off-season = lowest rates. Book a family room / two doubles for 4. Look on Booking.com / MakeMyTrip / direct call. Always confirm hot water &amp; parking.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Place</th><th>Nights</th><th>Area / Type</th><th class="num">Rate/night (4 pax)</th><th class="num">Subtotal</th></tr></thead>
+      <tbody>
+        <tr><td>Munnar</td><td>4</td><td>Homestay near town / Pothamedu</td><td class="num">₹1,300</td><td class="num">₹5,200</td></tr>
+        <tr><td>Wayanad</td><td>3</td><td>Homestay near Kalpetta/Meppadi</td><td class="num">₹1,300</td><td class="num">₹3,900</td></tr>
+        <tr><td>Train</td><td>2</td><td>Sleeper berths (in transport)</td><td class="num">—</td><td class="num">—</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="4">Total Stay (7 nights)</td><td class="num">₹9,100</td></tr></tfoot>
+    </table>
+  </div>
+  <div class="note">💡 Cheaper still: hostels/dorms (₹400–600/bed) like Zostel-style stays, or estate homestays that include breakfast. Negotiate for multi-night monsoon discounts.</div>
+</section>
+
+<!-- BIKE -->
+<section id="bike">
+  <span class="sec-tag">Get Around</span>
+  <h2>Bike &amp; Transport Rentals 🛵</h2>
+  <p class="lead">Renting 2 two-wheelers for 4 people is the cheapest, most flexible way to explore the hills. Carry your driving licence; helmets are a must (and the law).</p>
+  <div class="grid g2">
+    <div class="card"><div class="pad">
+      <h3>🛵 Scooter / Bike Rental</h3>
+      <p>Scooter (Activa) ₹400–500/day · Geared bike (Pulsar/Himalayan) ₹700–900/day. Petrol extra (~₹110/L). Need: licence + ₹1,000 deposit / ID.</p>
+      <span class="price-chip">Munnar: 2 bikes ×3 days ≈ ₹3,000 + fuel ₹1,500</span><br>
+      <span class="price-chip">Wayanad: 2 scooters ×2 days ≈ ₹1,600 + fuel ₹900</span>
+    </div></div>
+    <div class="card"><div class="pad">
+      <h3>🚌 Buses &amp; Jeeps</h3>
+      <p>KSRTC buses connect everything cheaply. Shared 4WD jeeps for Kolukkumalai &amp; safaris. Local autos for short hops (₹50–150).</p>
+      <span class="price-chip">Kochi→Munnar bus: ₹600 (4)</span>
+      <span class="price-chip">Munnar→Wayanad bus: ₹2,200 (4)</span>
+      <span class="price-chip">Wayanad→Kozhikode bus: ₹400 (4)</span>
+    </div></div>
+  </div>
+  <div class="note warn">🌧️ Monsoon riding: roads are wet &amp; foggy with hairpin bends. Ride slow, avoid night riding, keep raincoats &amp; phone in a waterproof pouch. If a ghat road is closed, switch to bus/jeep.</div>
+</section>
+
+<!-- FOOD & ALCOHOL -->
+<section id="food">
+  <span class="sec-tag">Eat &amp; Drink</span>
+  <h2>Food &amp; Alcohol 🍛🍺</h2>
+  <p class="lead">Kerala food is cheap, fresh and delicious. A full "meals" plate is ₹80–150; a seafood/non-veg meal ₹150–250.</p>
+  <div class="grid g3">
+    <div class="feat"><div class="ico">🍛</div><b>Kerala Meals</b><small>Rice, sambar, avial, thoran on banana leaf — ₹80–150</small></div>
+    <div class="feat"><div class="ico">🥞</div><b>Appam &amp; Stew</b><small>Lacy rice pancakes with veg/chicken stew — ₹100–180</small></div>
+    <div class="feat"><div class="ico">🐟</div><b>Karimeen / Fish Fry</b><small>Pearl-spot fish, beef fry, parotta — toddy-shop style</small></div>
+    <div class="feat"><div class="ico">☕</div><b>Fresh Tea &amp; Coffee</b><small>Estate-fresh, ₹15–40. A Munnar/Wayanad ritual</small></div>
+    <div class="feat"><div class="ico">🍫</div><b>Homemade Chocolate</b><small>Munnar specialty — great cheap gifts</small></div>
+    <div class="feat"><div class="ico">🍮</div><b>Calicut Halwa</b><small>Iconic Kozhikode sweet on your way home</small></div>
+  </div>
+
+  <h3 style="margin:24px 0 6px;color:var(--green-d)">🍺 Alcohol Notes</h3>
+  <div class="note">
+    Kerala sells liquor mainly through <b>state "Bevco" shops</b> &amp; bar-hotels — expect queues. <b>Toddy shops</b> serve cheap local palm wine with spicy food (a fun, authentic experience). Beer ~₹150–200, IMFL quarter ~₹150–250. Budget set aside: <b>~₹6,000 for the group</b> across the trip (≈₹150–200 pp on drinking days). Never drink &amp; ride — use a bus/auto.
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section id="budget">
+  <span class="sec-tag">The Numbers</span>
+  <h2>Complete Budget 💰</h2>
+  <p class="lead">Realistic <b>lowest-budget</b> estimate for <b>4 people · 9 days</b> (monsoon off-season rates). Prices vary — keep a buffer.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Category</th><th>Details</th><th class="num">Total (4 pax)</th><th class="num">Per person</th></tr></thead>
+      <tbody>
+        <tr><td>🚆 Trains (both ways)</td><td>HYD→Kochi + Kozhikode→HYD, sleeper</td><td class="num">₹5,200</td><td class="num perp">₹1,300</td></tr>
+        <tr><td>🚌 Inter-city buses</td><td>Kochi→Munnar, Munnar→Wayanad, →Kozhikode</td><td class="num">₹3,200</td><td class="num perp">₹800</td></tr>
+        <tr><td>🛵 Local transport</td><td>Bike/scooter rent + fuel + jeeps + autos</td><td class="num">₹14,000</td><td class="num perp">₹3,500</td></tr>
+        <tr><td>🏡 Stay</td><td>7 nights homestays</td><td class="num">₹9,100</td><td class="num perp">₹2,275</td></tr>
+        <tr><td>🍛 Food</td><td>~₹350 pp/day × 8 days</td><td class="num">₹11,500</td><td class="num perp">₹2,875</td></tr>
+        <tr><td>🍺 Alcohol</td><td>Group, across trip</td><td class="num">₹6,000</td><td class="num perp">₹1,500</td></tr>
+        <tr><td>🎟️ Entries &amp; activities</td><td>Parks, caves, boating, treks, safari</td><td class="num">₹9,000</td><td class="num perp">₹2,250</td></tr>
+        <tr><td>🛍️ Shopping &amp; buffer</td><td>Gifts, emergencies, misc</td><td class="num">₹5,000</td><td class="num perp">₹1,250</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="2">GRAND TOTAL</td><td class="num">≈ ₹63,000</td><td class="num">≈ ₹15,750</td></tr>
+      </tfoot>
+    </table>
+  </div>
+  <div class="total-banner">
+    <small>Estimated total for 4 friends, 9 days</small>
+    <b>≈ ₹62,000 – ₹65,000</b>
+    <small>≈ ₹15,500 – ₹16,250 per person · Save more by sharing rooms, using buses over jeeps &amp; cooking some meals.</small>
+  </div>
+  <div class="note">💡 <b>Money-saving tips:</b> Book trains 60 days early (no Tatkal premium) · travel by KSRTC instead of cabs · eat at local "meals" hotels not tourist restaurants · skip the safari/Kolukkumalai jeep if budget is tight (saves ~₹5,000) · monsoon already gives off-season discounts.</div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <span class="sec-tag">Watch Before You Go</span>
+  <h2>Best YouTube Travel Guides 🎬</h2>
+  <p class="lead">Hand-picked recent budget guides for Munnar, Wayanad &amp; the full Kerala circuit.</p>
+  <div class="grid g3">
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube.com/embed/R_D3BnlEwb4" title="Munnar Travel Guide 2026" loading="lazy" allowfullscreen></iframe></div>
+      <div class="pad"><b>Munnar Travel Guide 2026 — Itinerary &amp; Budget</b><small>Most up-to-date complete Munnar plan</small></div>
+    </div>
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube.com/embed/hCjY_APxV9Y" title="Munnar Vlog 2025" loading="lazy" allowfullscreen></iframe></div>
+      <div class="pad"><b>Munnar Vlog 2025 — Stay, Budget &amp; Food</b><small>Where to stay + real budget breakdown</small></div>
+    </div>
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube.com/embed/Z-YTTLAad5Y" title="Wayanad Budget Tour 2025" loading="lazy" allowfullscreen></iframe></div>
+      <div class="pad"><b>Wayanad Budget Tour Guide 2025</b><small>How to plan a low-budget Wayanad trip</small></div>
+    </div>
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube.com/embed/SjSAys0YKf8" title="Wayanad 2N/3D Plan" loading="lazy" allowfullscreen></iframe></div>
+      <div class="pad"><b>Wayanad 2N/3D Complete Itinerary</b><small>Perfectly planned Wayanad route</small></div>
+    </div>
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube.com/embed/dCKI2C9RWe8" title="Wayanad 2 Days Guide" loading="lazy" allowfullscreen></iframe></div>
+      <div class="pad"><b>Wayanad 2-Day Guide + Adventure &amp; Budget</b><small>Places, activities &amp; costs</small></div>
+    </div>
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube.com/embed/qwIrZQz9aok" title="Kerala Full Trip Guide" loading="lazy" allowfullscreen></iframe></div>
+      <div class="pad"><b>Kerala Trip Guide (Hindi) — Munnar, Alleppey, Wayanad</b><small>5 &amp; 7-day budget itineraries</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section id="tips">
+  <span class="sec-tag">Be Prepared</span>
+  <h2>Monsoon Packing &amp; Smart Tips 🎒</h2>
+  <ul class="tip-list">
+    <li><span>🧥</span><div><b>Rain gear first:</b> raincoat/poncho, quick-dry clothes, waterproof pouch for phone/cash, dry-bag for the backpack.</div></li>
+    <li><span>👟</span><div><b>Grippy footwear:</b> trekking shoes/sandals with good grip — trails &amp; waterfalls get very slippery.</div></li>
+    <li><span>🩹</span><div><b>Leech &amp; first-aid:</b> carry salt/Odomos for leeches on Wayanad treks, plus basic meds &amp; motion-sickness tablets for ghat roads.</div></li>
+    <li><span>📄</span><div><b>Documents:</b> ID proof + driving licence (for bike rental), printed train tickets, offline maps downloaded.</div></li>
+    <li><span>💵</span><div><b>Cash:</b> carry enough — many homestays, toddy shops, falls &amp; jeeps are cash-only; ATMs are sparse in hills.</div></li>
+    <li><span>📅</span><div><b>Book early:</b> reserve trains ~60 days ahead; confirm Eravikulam &amp; Chembra permits and check daily road/weather status.</div></li>
+    <li><span>🔋</span><div><b>Power &amp; signal:</b> power bank essential; mobile signal is patchy in estates &amp; forests. Inform family of your plan.</div></li>
+    <li><span>🌦️</span><div><b>Stay flexible:</b> have a Plan B indoor option (Tea Museum, cafes, local markets) for the heaviest rain days.</div></li>
+  </ul>
+</section>
+
+<footer>
+  <b>🌴 Munnar &amp; Wayanad Wonders — Kerala 2026 🌴</b><br>
+  9 Days · 4 Travellers · From Hyderabad · Starting 03 July 2026<br>
+  <div style="margin-top:10px">
+    <span class="pill">≈ ₹62k total</span>
+    <span class="pill">~₹15.5k / person</span>
+    <span class="pill">Budget &amp; Best</span>
+  </div>
+  <p style="margin-top:14px;opacity:.75;font-size:12px">Prices &amp; timings are 2025–26 estimates — verify on IRCTC / KSRTC / official sites before booking. Travel safe in the monsoon. Have an amazing trip! 💚</p>
+</footer>
+
+</body>
+</html>
